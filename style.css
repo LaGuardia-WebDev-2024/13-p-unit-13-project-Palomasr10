@@ -1,6 +1,6 @@
 #movie-result {
-  background: rgb(244, 98, 181);
-  border: 5px solid black;
+  background: rgb(203,114,140);
+  border: 5px solid rgb(196,161,178);
   font-size: 24px;
   height: 160px;
   margin-top: 10px;
@@ -8,8 +8,8 @@
 }
 
 #book-result {
-  background: rgb(196, 159, 255);
-  border: 5px solid black;
+  background: rgb(203,114,140);
+  border: 5px solid rgb(196,161,178);
   font-size: 24px;
   height: 160px;
   margin-top: 10px;
@@ -18,5 +18,45 @@
 
 hr {
   height: 5px;
-  background-color: black;
+  background-color: rgb(196,161,178);
+}
+
+
+p {
+  font-size: 10px;
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(240,217,222);
+}
+
+
+#title {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(196,161,178);
+}
+
+label {
+color: rgb(203,114,140);
+}
+
+html {
+  background-color: rgb(240,217,222);
+}
+
+#movie-answer{
+  background-color: rgb(203,114,140);
+  color: rgb(240,217,222);
+}
+
+#book-answer {
+  background-color: rgb(203,114,140);
+  color: rgb(240,217,222);
+}
+
+.check {
+  background-color: rgb(203,114,140);
+  color: rgb(240,217,222);
 }
