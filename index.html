@@ -1,12 +1,12 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[Yes] Two Interactive Drop-down Inputs 
+[Yes] Two Different jQuery Animation Methods 
+[Yes] Add Five CSS Declarations
+[Yes] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[Yes] Feature 1 - Google Font
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
 [ no ] Feature 4 - :hover Feature 
@@ -15,13 +15,19 @@ Select ONE Additional Feature to Add
 
 <!DOCTYPE html>
 <html>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Pacifico&family=Style+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Fascinate+Inline&family=Pacifico&family=Style+Script&display=swap" rel="stylesheet">
   <head>
     <meta charset="utf-8" />
     <title>Unit 13 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1 id="title">Quiz About [Me]</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
@@ -34,9 +40,23 @@ Select ONE Additional Feature to Add
           <option value="movie4">movie 4</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit" class="check">Check Movie Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="movie-result">
+    
+      <p id="m-result">
+        Your Results
+      </p>
+      
+    <img class="movie-pics" src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Unknown.jpeg?v=1746721511267" width="105" >
+      
+     <img class="" src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Unknown-2.jpeg?v=1746721506889" width="105"> 
+      
+       <img class="movie-pics" src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Unknown-1.jpeg?v=1746721494926" width="105">
+      
+      <img class="" src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Unknown-3.jpeg?v=1746721501474" width="105">
+    
+    </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
@@ -49,9 +69,23 @@ Select ONE Additional Feature to Add
           <option value="book4">book 4</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit" class="check">Check Book Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="book-result">
+    
+      <p id="b-result">
+        Your Results
+      </p>
+      
+      <img src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Screenshot%202025-05-08%20at%2012.23.48%E2%80%AFPM.png?v=1746721479658" width="83">
+      
+      <img class="movie-pics" src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/images.jpeg?v=1746721483182" width="83">
+      
+      <img src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Unknown-5.jpeg?v=1746721486795" width="83">
+      
+      <img class="movie-pics" src="https://cdn.glitch.global/3105a24c-a424-46ff-8cd3-d273a3accdc5/Unknown-4.jpeg?v=1746721490761" width="83">
+      
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -61,11 +95,23 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
-        } else {
-          $("#movie-result").text("Try Again!");
+        if (answer === "movie2") {
+          $("#m-result").text("Correct!");
         }
+        
+        if (answer == "movie1") {
+          $("#m-result").text("Close!");
+        } 
+        
+        if (answer == "movie4") {
+          $("#m-result").text("This is my favorite Christmas movie");
+        }
+        
+        
+        if (answer == "movie3") {
+          $("#m-result").text("I recommend it but not my favorite");
+        }
+        
       });
 
       //Book Question jQuery Code
@@ -75,12 +121,33 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
+        if (answer === "book3") {
+          $("#b-result").text("Correct!");
+        } 
+      
         if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
-        } else {
-          $("#book-result").text("Try Again!");
+          $("#b-result").text("This is a childhood favorite");
         }
+        
+        if (answer === "book2") {
+          $("#b-result").text("Love this book but not my favorite");
+        }
+        
+        if (answer === "book4") {
+          $("#b-result").text("This is my second favorite book");
+        }
+        
+        
       });
+      
+       $(".movie-pics").hide(1000, function () {
+          $(".movie-pics").slideDown(3000)
+        });
+      
+      $(".book-pics").hide(1000, function (){
+        $("book-pics").fadeIn(3000)
+      })
+      
     </script>
   </body>
 
